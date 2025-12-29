@@ -1,0 +1,563 @@
+/* =========================
+   Global Reset & Base
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf7;
+  color: #3b1d1d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: #5a0f1a;
+  color: #f5d58c;
+}
+
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-size: 14px;
+  color: #f5d58c;
+}
+
+nav a.active {
+  border-bottom: 2px solid #f1d08a;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  nav {
+    height: auto;
+    padding: 14px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* =========================
+   Layout Container (NO SCROLL)
+========================= */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  min-height: calc(100vh - 140px); /* nav + footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   Headings & Motif
+========================= */
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #5a0f1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.motif {
+  display: block;
+  margin: 18px auto 32px;
+  max-width: 420px;
+  opacity: 0.8;
+}
+
+/* =========================
+   HOME PAGE (Balanced Grid)
+========================= */
+
+.home-wrapper {
+  padding: 40px 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 34px 30px;
+  border: 2px solid transparent;
+  min-height: 180px;
+  transition: all 0.3s ease;
+}
+
+.card .icon {
+  font-size: 26px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #5a0f1a;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #6b4b4b;
+}
+
+/* Card themes */
+.card-story {
+  background: #fff6f8;
+  border-color: #f2c6cf;
+}
+
+.card-venue {
+  background: #fffaf0;
+  border-color: #f1d08a;
+}
+
+.card-gallery {
+  background: #fff5f8;
+  border-color: #f3b2c4;
+}
+
+.card-contacts {
+  background: #fffaf3;
+  border-color: #e7c77c;
+}
+
+/* Hover */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+  }
+
+  .venue-qr:hover {
+    transform: scale(1.04);
+  }
+
+  .calendar-btn:hover {
+    background: #fff4d8;
+  }
+}
+
+/* Mobile home */
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* =========================
+   OUR STORY (Single Screen)
+========================= */
+
+.story-page {
+  max-width: 720px;
+  text-align: center;
+}
+
+.story-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.9;
+  font-style: italic;
+  color: #5a0f1a;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   VENUE
+========================= */
+
+.venue-page {
+  text-align: center;
+}
+
+.venue-note {
+  color: #6b4b4b;
+  margin-bottom: 24px;
+}
+
+.venue-qr {
+  width: 220px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.venue-helper {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #6b4b4b;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-page {
+  text-align: center;
+}
+
+.gallery-note {
+  color: #6b4b4b;
+  margin-bottom: 18px;
+}
+
+.upload-section {
+  margin-bottom: 28px;
+}
+
+.upload-text {
+  margin-bottom: 12px;
+  color: #5a0f1a;
+}
+
+.upload-btn {
+  background: #5a0f1a;
+  color: #f5d58c;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  opacity: 0.9;
+}
+
+/* Slideshow (NO CROP, NO SCROLL) */
+.slideshow {
+  max-width: 900px;
+  width: 100%;
+  margin: 24px auto 0;
+  position: relative;
+  border-radius: 20px;
+
+  /* 👇 THIS IS THE FIX */
+  aspect-ratio: 4 / 3;
+}
+
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   GALLERY IMAGE FIX
+========================= */
+
+.gallery-frame {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: auto;              /* 🔑 THIS FIXES CROPPING */
+  display: block;
+  border-radius: 18px;
+  object-fit: contain;       /* 🔑 SHOW FULL IMAGE */
+  background: #fff;
+}
+
+/* =========================
+   CONTACTS
+========================= */
+
+.contacts-page {
+  text-align: center;
+}
+
+.contacts-note {
+  color: #6b4b4b;
+  margin-bottom: 30px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.contact-card {
+  background: #fff7f9;
+  border: 2px solid #f2c6cf;
+  border-radius: 18px;
+  padding: 28px 22px;
+}
+
+.contact-icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.contact-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5a0f1a;
+  margin-bottom: 6px;
+}
+
+.contact-card p {
+  font-size: 15px;
+  color: #6b4b4b;
+}
+
+/* =========================
+   FOOTER (NO EXTRA SPACE)
+========================= */
+
+footer {
+  height: 70px;
+  background: #5a0f1a;
+  color: #f5d58c;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+}
+
+footer .date {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffaf7; 
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero-inner {
+  max-width: 700px;
+}
+
+.hero-heart {
+  font-size: 34px;
+  color: #7a1424;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #5a0f1a;
+  margin: 0;
+}
+
+.hero-title span {
+  color: #d4a24c;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  margin: 10px 0 18px;
+  color: #6b4b4b;
+}
+
+.hero-date {
+  font-size: 15px;
+  color: #5a0f1a;
+}
+
+/* =========================
+   HOME CARDS BELOW HERO
+========================= */
+
+.home-cards {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .home-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.calendar-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-size: 14px;
+  color: #5a0f1a;
+  border: 1px solid #d4a24c;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.countdown {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b4b4b;
+}
+
+.dress-code {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+}
+
+.dress-code li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #6b4b4b;
+}
+
+/* =========================
+   EVENTS PAGE
+========================= */
+
+.page {
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #5a0f1a;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  color: #6b4b4b;
+  margin-bottom: 50px;
+}
+
+.family-section {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.family-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #7a1424;
+  margin-bottom: 26px;
+}
+
+.event-card {
+  background: #fffaf3;
+  border: 1px solid #e7c77c;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.event-card h3 {
+  margin-bottom: 6px;
+  color: #5a0f1a;
+}
+
+.event-card p {
+  font-size: 14px;
+  color: #6b4b4b;
+  margin: 4px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .event-card {
+    text-align: center;
+  }
+  
+  .home-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
