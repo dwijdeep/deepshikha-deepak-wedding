@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepshikha & Deepak</title>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<script>
+  const weddingDate = new Date("February 24, 2026 00:00:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerText =
+        "Today we begin our forever 💛";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerText =
+      `We’re getting married in ${days} days`;
+  }, 1000);
+</script>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">Deepshikha & Deepak</div>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="our-story.html">Our Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="dress-code.html">Dress Code</a></li>
+    <li><a href="venue.html">Venue</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contacts.html">Contacts</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-heart">♥</div>
+
+    <h1 class="hero-title">
+      Deepshikha <span>&</span> Deepak
+    </h1>
+
+    <p class="hero-subtitle">
+  Together with our families, we invite you to celebrate our wedding
+</p>
+
+    <div class="hero-date">
+      📅 24th February 2026
+      <a
+  href="https://www.google.com/calendar/render?action=TEMPLATE
+&text=Deepshikha+%26+Deepak+Wedding
+&dates=20260215T120000/20260215T180000
+&details=Wedding+of+Deepshikha+and+Deepak
+&location=SSSFarms,+Bijwasan,+New+Delhi"
+  target="_blank"
+  class="calendar-btn"
+>
+  📅 Add to Calendar
+</a>
+<p id="countdown" class="countdown"></p>
+    </div>
+  </div>
+</section>
+
+<section class="home-cards">
+  <a href="our-story.html" class="card card-story">
+    <span class="icon">♡</span>
+    <h3>Our Story</h3>
+    <p>How our journey began</p>
+  </a>
+
+  <a href="events.html" class="card card-venue">
+    <span class="icon">📅</span>
+    <h3>Wedding Events</h3>
+    <p>Ceremonies & schedule</p>
+  </a>
+
+  <a href="dress-code.html" class="card card-gallery">
+    <span class="icon">👗</span>
+    <h3>Dress Code</h3>
+    <p>What to wear for each event</p>
+  </a>
+
+  <a href="venue.html" class="card card-venue">
+    <span class="icon">📍</span>
+    <h3>Venue</h3>
+    <p>Location & directions</p>
+  </a>
+
+  <a href="gallery.html" class="card card-gallery">
+    <span class="icon">📸</span>
+    <h3>Gallery</h3>
+    <p>Moments & memories</p>
+  </a>
+
+  <a href="contacts.html" class="card card-contacts">
+    <span class="icon">📞</span>
+    <h3>Contacts</h3>
+    <p>Important people to reach</p>
+  </a>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>💛 Deepshikha & Deepak 💛</p>
+  <p class="date">24th February 2026</p>
+</footer>
+
+</body>
+</html>
